@@ -1,0 +1,103 @@
+/*---
+---
+*/// The front matter above tells Jekyll to compile this file into standard CSS.
+
+/* ---------- Project cards ---------- */
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.project-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-card__title {
+  padding: 1rem 1.5rem 0;
+  margin: 0;
+}
+
+.project-card__link {
+  font-weight: 600;
+}
+
+/* Top layout (default): images stacked above text */
+.project-card--top .project-card__images {
+  display: flex;
+}
+
+.project-card--top .project-card__images img {
+  width: 50%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.project-card--top .project-card__images:has(img:only-child) img {
+  width: 100%;
+}
+
+.project-card--top .project-card__body {
+  padding: 1.5rem;
+}
+
+/* Left layout: images float left, text wraps */
+.project-card--left .project-card__content {
+  padding: 1rem 1.5rem 1.5rem;
+  overflow: auto;
+}
+
+.project-card--left .project-card__images {
+  float: left;
+  width: 240px;
+  margin: 0 1.5rem 0.75rem 0;
+}
+
+.project-card--left .project-card__images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.project-card--left .project-card__images img:last-child {
+  margin-bottom: 0;
+}
+
+.project-card--left .project-card__body {
+  padding: 0;
+}
+
+/* ---------- Floated inline images (e.g. about page) ---------- */
+.float-left {
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.img-small {
+  max-width: 25%;
+}
+
+.img-medium {
+  max-width: 45%;
+}
+
+.img-large {
+  max-width: 65%;
+}

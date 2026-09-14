@@ -1,0 +1,17 @@
+{% assign pos = include.project.image_position | default: "top" %}
+<div class="project-card project-card--{{ pos }}">
+  <h3 class="project-card__title">{{ include.project.title }}</h3>
+  <div class="project-card__content">
+    <div class="project-card__images">
+      {% for img in include.project.images %}
+        <img src="{{ img | relative_url }}" alt="{{ include.project.title }}">
+      {% endfor %}
+    </div>
+    <div class="project-card__body">
+      <p>{{ include.project.description }}</p>
+      {% if include.project.link %}
+        <a href="{{ include.project.link }}" class="project-card__link">View project →</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
