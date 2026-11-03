@@ -6,12 +6,11 @@ layout: default
 ---
 
 <div class="home">
-  {% if page.title %}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {% endif %}
+  <h1 class="page-heading">{{ page.title }}</h1>
 
-  {% assign about_page = site.pages | where: "path", "about.md" | first %}
-  <div class="post-content">
-    {{ about_page.content | markdownify }}
+  <div class="project-grid">
+    {% for item in site.data.home %}
+      {% include project-card.html project=item %}
+    {% endfor %}
   </div>
 </div>

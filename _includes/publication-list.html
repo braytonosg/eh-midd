@@ -1,0 +1,28 @@
+{% if include.items and include.items.size > 0 %}
+  <h2>{{ include.heading }}</h2>
+  <ul class="pub-list">
+    {% if include.sort == "none" %}
+      {% assign sorted = include.items %}
+    {% elsif include.sort == "order" %}
+      {% assign sorted = include.items | sort: "order" %}
+    {% else %}
+      {% assign sorted = include.items | sort: "year" | reverse %}
+    {% endif %}
+    {% for pub in sorted %}
+      {% assign authors = pub.authors | markdownify | remove: "<p>" | remove: "</p>" | strip %}
+      {% assign venue = pub.venue | markdownify | remove: "<p>" | remove: "</p>" | strip %}
+      <li class="pub">
+        {% if include.format == "other" %}
+          {{ authors }} {{ pub.title }}.
+          {%if pub.venue %} {{ venue }}. {% endif %}
+          {% if pub.month_day %}{{ pub.month_day }}, {{ pub.year }}{% else %}{{ pub.year }}{% endif %}.
+        {% elsif include.format == "chapter" %}
+          {{ authors }} {{ pub.title }}. {{ venue }}
+        {% else %}
+          {{ authors }} ({{ pub.year }}). {{ pub.title }}. {{ venue }}
+        {% endif %}
+        {% if pub.link %}<a href="{{ pub.link }}">{{ pub.link }}</a>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

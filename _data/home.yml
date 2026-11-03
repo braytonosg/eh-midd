@@ -1,0 +1,23 @@
+- title: "Environmental Health at Middlebury"
+  description: >
+    List of current courses
+  image_position: left
+  images:
+    - /assets/images/home/currently.jpg
+  link: /teaching/
+  link_text: "Read more →"
+
+- title: "Research"
+  description: >
+    My lab is currently working on PFAS in ski wax, fish and a birth cohort study.
+  image_position: top
+  images:
+    - /assets/img/projects/fish1.png
+  link: /projects/
+  link_text: "Read more →"
+
+- title: "Mentoring"
+  description: >
+    Learn about the people involved in these projects
+  link: /people/
+  link_text: "Read more →"

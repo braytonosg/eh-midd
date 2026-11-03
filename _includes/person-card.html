@@ -1,0 +1,21 @@
+<div class="person">
+  {% if include.person.photo %}
+    <img class="person__photo" src="{{ include.person.photo | relative_url }}" alt="{{ include.person.name }}">
+  {% endif %}
+  <div class="person__info">
+    <h3 class="person__name">
+      {% if include.person.link %}
+        <a href="{{ include.person.link }}">{{ include.person.name }}</a>
+      {% else %}
+        {{ include.person.name }}
+      {% endif %}
+    </h3>
+    {% if include.person.role %}
+      <div class="person__role">{{ include.person.role }}</div>
+    {% endif %}
+    {% if include.person.major %}
+      <div class="person__role">{{ include.person.major }}</div>
+    {% endif %}
+    <div class="person__bio">{{ include.person.bio | markdownify }}</div>
+  </div>
+</div>

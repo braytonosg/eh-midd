@@ -1,0 +1,55 @@
+current:
+  - name: "Myrah Valmyr, she/her"
+    role: Class of 2027
+    major: Biology major, Global Health minor
+    photo: /assets/img/valmyr.png
+    bio: >
+      Hi! I’m a senior at Middlebury College from Boston, Massachusetts and a student in Biology and Global Health.
+      This research speaks to my passion and curiosity towards  environmental health and toxicology, especially the
+      relationship between how we obtain data and who the data ultimately protects and educates. Conveying PFAS
+      exposure research through quantitative and mixed methodology can be challenging, but rewarding, as it is
+      integral to the complexity our research aims to capture. Most of all, I love sharing science with everyone,
+      by any means possible.
+    
+  - name: "Sarah Sherley" 
+    role: Class of 2027
+    major: Chemistry major, Spanish minor
+    photo: /assets/img/sherley.png
+    bio: >
+      I’m Sarah and aChemistry major from Seattle, WA. Over the course of the past year, I have worked as a 
+      research assistant in Kate Crawford’s lab focused on two projects: (1) a qualitative project studying 
+      the gap and intersections between skiers' knowledge, awareness, and exposure to PFAS in ski wax, and (2)
+      a study using x-ray fluorescence (XRF) to evaluate ski wax chemistry for products created after the fluorinated
+      wax ban. In the year to come, I will be focusing on a study to identify novel tracers for wax contamination in 
+      the environment near ski and snowboard venues. During my time outside the lab, I love exploring the mountains 
+      and knitting.
+
+  - name: "Diego Bradley"
+    role: Class of 2027.5
+    major: Environmental Studies-Chemistry joint major
+
+alumni:
+  - name: "Celeste Alden ‘25.5"
+    detail:
+  - name: "Emilia Andersen ‘22"
+    detail:
+  - name: "Theresa Barth ‘24"
+    detail:
+  - name: "Claire Contreras ‘22.5"
+    detail:
+  - name: "Divya Gudur ‘21"
+    detail:
+  - name: "Nicola Hartman ‘23.5"
+    detail:
+  - name: "Angela Izi ‘24"
+    detail:
+  - name: "Laura Lardinois ‘21"
+    detail:
+  - name: "Seiha San ‘22"
+    detail:
+  - name: "Greyson Shanley-Barr ‘23.5"
+    detail:
+  - name: "Lauren Thomson ‘22.5"
+    detail:
+  - name: "Isaac Xie ‘24"
+    detail:

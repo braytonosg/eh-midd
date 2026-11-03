@@ -101,3 +101,80 @@
 .img-large {
   max-width: 65%;
 }
+
+/* ---------- Home page ---------- */
+$middlebury-blue: #37538C;
+
+/* Blue band behind the page content, home page only */
+.page-content:has(.home) {
+  background-color: $middlebury-blue;
+}
+
+/* Keep the content column light so the cards stay readable */
+.home {
+  background-color: #fdfdfd;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* ---------- People page ---------- */
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.person {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.person__photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.person__name {
+  margin: 0;
+}
+
+.person__role {
+  color: #828282;
+  margin-bottom: 0.5rem;
+}
+
+.person__bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Stack photo above text on small screens */
+@media screen and (max-width: 600px) {
+  .person {
+    flex-direction: column;
+  }
+
+  .person__photo {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+/* ---------- Publications page ---------- */
+.pub-list {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 2rem;
+}
+
+.pub {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem; /* hanging indent, standard for citations */
+}
