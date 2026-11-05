@@ -1,0 +1,18 @@
+{% if include.items and include.items.size > 0 %}
+  <h2>{{ include.heading }}</h2>
+  <ul class="course-list">
+    {% for course in include.items %}
+      <li class="course">
+        <h4 class="course__title">
+          {% if course.link %}<a href="{{ course.link }}">{% endif %}
+          {% if course.code %}{{ course.code }}: {% endif %}{{ course.title }}
+          {% if course.link %}</a>{% endif %}
+        </h4>
+        {% if course.term %}<div class="course__term">{{ course.term }}</div>{% endif %}
+        {% if course.description %}
+          <div class="course__description">{{ course.description | markdownify }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

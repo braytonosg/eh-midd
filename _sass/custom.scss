@@ -1,8 +1,41 @@
-/*---
----
-*/// The front matter above tells Jekyll to compile this file into standard CSS.
+// Partial imported by assets/main.scss (@import "custom";).
+// It needs no front matter: Sass would copy the dashes into the compiled CSS.
 
-/* ---------- Project cards ---------- */
+/* ==========================================================
+   Variables
+   ========================================================== */
+$border-color: #e8e8e8;
+$muted-color: #828282;
+$page-bg: #fdfdfd;
+
+
+/* ==========================================================
+   Utilities (floated images in Markdown, e.g. the about page)
+   ========================================================== */
+.float-left {
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.img-small  { max-width: 25%; }
+.img-medium { max-width: 45%; }
+.img-large  { max-width: 65%; }
+
+
+/* ==========================================================
+   Project cards (projects page and home page)
+   ========================================================== */
 .project-grid {
   display: flex;
   flex-direction: column;
@@ -12,10 +45,11 @@
 }
 
 .project-card {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $border-color;
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
+  box-sizing: border-box; /* include padding and border in the 100% width */
 }
 
 .project-card__title {
@@ -27,7 +61,7 @@
   font-weight: 600;
 }
 
-/* Top layout (default): images stacked above text */
+/* Top layout (default): images above the text */
 .project-card--top .project-card__images {
   display: flex;
 }
@@ -46,7 +80,7 @@
   padding: 1.5rem;
 }
 
-/* Left layout: images float left, text wraps */
+/* Left layout: images float left, text wraps around them */
 .project-card--left .project-card__content {
   padding: 1rem 1.5rem 1.5rem;
   overflow: auto;
@@ -73,51 +107,31 @@
   padding: 0;
 }
 
-/* ---------- Floated inline images (e.g. about page) ---------- */
-.float-left {
-  float: left;
-  margin: 0 1.5rem 1rem 0;
+/* Compact layout (home page): thumbnail + title in a row */
+.project-card--compact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
 }
 
-.float-right {
-  float: right;
-  margin: 0 0 1rem 1.5rem;
+.project-card--compact .project-card__title {
+  padding: 0;
 }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.project-card__thumb {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center top; /* if cropped vertically, keep the top and trim the bottom */
+  border-radius: 6px;
 }
 
-.img-small {
-  max-width: 25%;
-}
 
-.img-medium {
-  max-width: 45%;
-}
-
-.img-large {
-  max-width: 65%;
-}
-
-/* ---------- Home page ---------- */
-$middlebury-blue: #37538C;
-
-/* Blue band behind the page content, home page only */
-.page-content:has(.home) {
-  background-color: $middlebury-blue;
-}
-
-/* Keep the content column light so the cards stay readable */
-.home {
-  background-color: #fdfdfd;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-/* ---------- People page ---------- */
+/* ==========================================================
+   People page
+   ========================================================== */
 .people-list {
   display: flex;
   flex-direction: column;
@@ -144,7 +158,7 @@ $middlebury-blue: #37538C;
 }
 
 .person__role {
-  color: #828282;
+  color: $muted-color;
   margin-bottom: 0.5rem;
 }
 
@@ -166,7 +180,10 @@ $middlebury-blue: #37538C;
   }
 }
 
-/* ---------- Publications page ---------- */
+
+/* ==========================================================
+   Publications (publications page and home page)
+   ========================================================== */
 .pub-list {
   list-style: none;
   margin-left: 0;
@@ -176,5 +193,160 @@ $middlebury-blue: #37538C;
 .pub {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
-  text-indent: -1.5rem; /* hanging indent, standard for citations */
+  text-indent: -1.5rem; /* hanging indent: first line flush left, later lines indented */
+}
+
+.pub a {
+  overflow-wrap: anywhere; /* long URLs wrap instead of overflowing on phones */
+}
+
+
+/* ==========================================================
+   Courses (courses page and home page)
+   ========================================================== */
+.course-list {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 2rem;
+}
+
+.course {
+  margin-bottom: 1.5rem;
+}
+
+.course__title {
+  margin-bottom: 0;
+}
+
+.course__term {
+  color: $muted-color;
+  margin-bottom: 0.5rem;
+}
+
+.course__description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   Home page
+   ========================================================== */
+
+/* --- Full-width content area --- */
+.page-content:has(.hero) {
+  padding-top: 0; /* no gap above the photo */
+}
+
+/* The 100vw breakouts below can cause sideways scrolling; clip it */
+.page-content:has(.hero),
+.page-content:has(.home) {
+  overflow-x: clip;
+}
+
+.home {
+  /* break out of Minima's 800px wrapper to span the full window width */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  padding: 1.5rem 2rem;
+}
+
+.home .page-heading {
+  text-align: center;
+}
+
+/* --- Columns: each at least 480px wide, wrapping when they don't fit --- */
+.home-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+}
+
+.home-columns__col {
+  flex: 1 1 480px;
+  min-width: 0;     /* lets long words and URLs wrap instead of stretching the column */
+  max-width: 100%;  /* on phones narrower than 480px, fit the screen */
+}
+
+/* --- Full-screen hero photo --- */
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 30px;
+  /* no fixed height: the photo decides, up to a full screen */
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;           /* natural proportions at the window's width */
+  max-height: 100vh;
+  max-height: 100svh;     /* never taller than the screen */
+  min-height: 300px;      /* keep very wide photos from becoming a thin strip */
+  max-width: none;
+  object-fit: cover;      /* only crops when the photo is taller than the screen */
+  object-position: center;
+}
+
+/* Soft dark fade at the top so the white header text stays readable */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+/* --- Header pinned over the hero; turns solid once the hero scrolls away --- */
+body:has(.hero) .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  /* keep the borders so the header height doesn't change, just hide them */
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+body:has(.hero) .site-title,
+body:has(.hero) .site-title:visited {
+  color: #fff;
+  transition: color 0.25s ease;
+}
+
+/* On phones the nav opens in a light dropdown box, so its links stay dark there */
+@media screen and (min-width: 601px) {
+  body:has(.hero) .site-nav .page-link,
+  body:has(.hero) .site-nav .page-link:visited,
+  body:has(.hero) .site-nav .page-link:hover {
+    color: #fff;
+    transition: color 0.25s ease;
+  }
+}
+
+/* Solid state: the script in index.md adds .is-solid after the hero scrolls off */
+body:has(.hero) .site-header.is-solid {
+  background: $page-bg;
+  border-top-color: #424242;
+  border-bottom-color: $border-color;
+}
+
+body:has(.hero) .site-header.is-solid .site-title,
+body:has(.hero) .site-header.is-solid .site-title:visited {
+  color: #424242;
+}
+
+@media screen and (min-width: 601px) {
+  body:has(.hero) .site-header.is-solid .site-nav .page-link,
+  body:has(.hero) .site-header.is-solid .site-nav .page-link:visited,
+  body:has(.hero) .site-header.is-solid .site-nav .page-link:hover {
+    color: #111;
+  }
 }

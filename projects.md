@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Research
+permalink: /research/
 ---
 
 My lab’s current work span several threads and undergraduate researchers play key roles on all projects: 

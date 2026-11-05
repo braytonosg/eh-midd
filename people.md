@@ -1,10 +1,8 @@
 ---
 layout: page
-title: People
-permalink: /people/
+title: Students
+permalink: /students/
 ---
-
-[Kate Crawford, PhD](../about/)
 
 ## Current students
 

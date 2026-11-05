@@ -1,0 +1,47 @@
+- code: "ENVS 0112"
+  title: "Science of Environmental Systems"
+  term: Fall 2026
+  current: true
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0112
+
+- code: "ENVS 0118"
+  title: "Navigating A Toxic World: Environmental Health in Your Daily Life"
+  term: Fall 2026
+  current: true
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0118
+
+- code: "ENVS 0225"
+  title: "Justice, Health & Environment"
+  term:
+  current: false
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0225
+
+- code: "ENVS 0230"
+  title: "Environmental Health"
+  term: Spring 2027
+  current: true
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0230
+
+- code: "ENVS 0265"
+  title: "Environmental Detectives: Using Exposure Science to Measure Hidden Health Threats"
+  term:
+  current: false
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0265
+
+- code: "ENVS 0401"
+  title: "Community Engaged Practicum in Environmental Studies"
+  term: Spring 2027
+  current: true
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS0401
+
+- code: "ENVS 1230"
+  title: "Data Science Across Disciplines"
+  term:
+  current: false
+  link: https://catalog.middlebury.edu/courses/view/course-ENVS1230
+
+- code: "FYSE 1104"
+  title: "First Year Seminar: Navigating Our Toxic World"
+  term:
+  current: false
+  link: https://catalog.middlebury.edu/courses/view/course-FYSE1104
