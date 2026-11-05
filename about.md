@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Dr. Crawford
+title: Kathryn A. Crawford
+nav_title: Dr. Crawford
 permalink: /about/
 ---
 
