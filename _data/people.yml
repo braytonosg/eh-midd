@@ -27,6 +27,12 @@ current:
   - name: "Diego Bradley"
     role: Class of 2027.5
     major: Environmental Studies-Chemistry joint major
+    photo: /assets/img/bradley.jpeg
+    bio: >
+      I’m Diego, an environmental chemistry major at Middlebury College in the class of 2027.5. The “.5” means I 
+      will be graduating midway through the 2027-2028 school year, on skis! I have been working in the Crawford 
+      lab since June 2025, studying non fluorinated wax chemistries. When I’m not in the lab, you can find me 
+      exploring the great outdoors on skis, rock, or on a bike.
 
 alumni:
   - name: "Celeste Alden ‘25.5"
