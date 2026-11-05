@@ -7,12 +7,18 @@ title: "Environmental Health at Middlebury"
 ---
 
 <div class="hero">
-  <img src="{{ '/assets/img/bg/snow.jpeg' | relative_url }}" alt="Describe the photo here">
+  <img src="{{ '/assets/img/bg/dots.png' | relative_url }}" alt="Describe the photo here">
 </div>
 
 <div class="home">
-  <h1 class="page-heading">{{ page.title }}</h1>
-
+  <div class="home-intro">
+    <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
+    <img src="{{ '/assets/img/eham.png' | relative_url}}">
+    <p>
+      Environmental health is a subdiscipline of public health that focuses on the reciprocal relationships between human activity, environmental quality, and the health of people and ecosystems. Environmental health is highly interdisciplinary and draws upon numerous public health, natural science, and social science disciplines including epidemiology, exposure science, toxicology, risk assessment, chemistry, biology, geology, sociology, psychology, and more. Middlebury offers many opportunities to learn about and engage directly with the field of environmental health. 
+    </p>
+  </div>
+  
   <div class="home-columns">
   {% assign current = site.data.teaching | where: "current", true %}
   {% if current.size > 0 %}

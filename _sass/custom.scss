@@ -255,6 +255,12 @@ $page-bg: #fdfdfd;
   text-align: center;
 }
 
+/* Intro block: regular Minima content width, centered above the columns */
+.home-intro {
+  max-width: 740px; /* Minima's 800px wrapper minus its 30px side padding */
+  margin: 0 auto 2rem;
+}
+
 /* --- Columns: each at least 480px wide, wrapping when they don't fit --- */
 .home-columns {
   display: flex;
@@ -287,66 +293,4 @@ $page-bg: #fdfdfd;
   max-width: none;
   object-fit: cover;      /* only crops when the photo is taller than the screen */
   object-position: center;
-}
-
-/* Soft dark fade at the top so the white header text stays readable */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 9rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
-  pointer-events: none;
-}
-
-/* --- Header pinned over the hero; turns solid once the hero scrolls away --- */
-body:has(.hero) .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  background: transparent;
-  /* keep the borders so the header height doesn't change, just hide them */
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-
-body:has(.hero) .site-title,
-body:has(.hero) .site-title:visited {
-  color: #fff;
-  transition: color 0.25s ease;
-}
-
-/* On phones the nav opens in a light dropdown box, so its links stay dark there */
-@media screen and (min-width: 601px) {
-  body:has(.hero) .site-nav .page-link,
-  body:has(.hero) .site-nav .page-link:visited,
-  body:has(.hero) .site-nav .page-link:hover {
-    color: #fff;
-    transition: color 0.25s ease;
-  }
-}
-
-/* Solid state: the script in index.md adds .is-solid after the hero scrolls off */
-body:has(.hero) .site-header.is-solid {
-  background: $page-bg;
-  border-top-color: #424242;
-  border-bottom-color: $border-color;
-}
-
-body:has(.hero) .site-header.is-solid .site-title,
-body:has(.hero) .site-header.is-solid .site-title:visited {
-  color: #424242;
-}
-
-@media screen and (min-width: 601px) {
-  body:has(.hero) .site-header.is-solid .site-nav .page-link,
-  body:has(.hero) .site-header.is-solid .site-nav .page-link:visited,
-  body:has(.hero) .site-header.is-solid .site-nav .page-link:hover {
-    color: #111;
-  }
 }
