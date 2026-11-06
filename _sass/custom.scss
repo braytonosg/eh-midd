@@ -231,66 +231,43 @@ $page-bg: #fdfdfd;
 /* ==========================================================
    Home page
    ========================================================== */
-
-/* --- Full-width content area --- */
-.page-content:has(.hero) {
-  padding-top: 0; /* no gap above the photo */
-}
-
-/* The 100vw breakouts below can cause sideways scrolling; clip it */
-.page-content:has(.hero),
-.page-content:has(.home) {
-  overflow-x: clip;
-}
-
-.home {
-  /* break out of Minima's 800px wrapper to span the full window width */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  box-sizing: border-box;
-  padding: 1.5rem 2rem;
-}
+$hero-padding: 1.5rem;
+$header-height: 62px; /* Minima's header: 55.95px min-height + 5px top border + 1px bottom border */
 
 .home .page-heading {
   text-align: center;
 }
 
-/* Intro block: regular Minima content width, centered above the columns */
-.home-intro {
-  max-width: 740px; /* Minima's 800px wrapper minus its 30px side padding */
-  margin: 0 auto 2rem;
+/* --- Hero photo: full window width, with padding around the edges --- */
+.page-content:has(.hero) {
+  padding-top: 0;    /* the hero supplies its own padding */
+  overflow-x: clip;  /* the 100vw breakout can otherwise cause sideways scrolling */
 }
 
-/* --- Columns: each at least 480px wide, wrapping when they don't fit --- */
-.home-columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 2rem;
-}
-
-.home-columns__col {
-  flex: 1 1 480px;
-  min-width: 0;     /* lets long words and URLs wrap instead of stretching the column */
-  max-width: 100%;  /* on phones narrower than 480px, fit the screen */
-}
-
-/* --- Full-screen hero photo --- */
 .hero {
-  position: relative;
+  /* break out of Minima's 800px wrapper to span the full window width */
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  margin-bottom: 30px;
-  /* no fixed height: the photo decides, up to a full screen */
+  box-sizing: border-box;
+  padding: $hero-padding;
 }
 
 .hero img {
   display: block;
   width: 100%;
-  height: auto;           /* natural proportions at the window's width */
-  max-height: 100vh;
-  max-height: 100svh;     /* never taller than the screen */
-  min-height: 300px;      /* keep very wide photos from becoming a thin strip */
+  height: auto;
   max-width: none;
-  object-fit: cover;      /* only crops when the photo is taller than the screen */
+  /* never taller than the space left on screen below the header */
+  max-height: calc(100vh - #{$header-height} - #{$hero-padding * 2});
+  max-height: calc(100svh - #{$header-height} - #{$hero-padding * 2});
+  object-fit: contain; /* never crops or stretches the composite */
   object-position: center;
+}
+
+.home section {
+  margin-bottom: 3rem;
+}
+
+.home section:last-child {
+  margin-bottom: 0;
 }
