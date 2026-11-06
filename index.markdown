@@ -12,8 +12,7 @@ title: "Environmental Health at Middlebury"
 
 <div class="home">
   <div class="home-intro">
-    <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
-    <img src="{{ '/assets/img/eham.png' | relative_url}}">
+    <h1 class="page-heading">{{ page.title }}</h1>
     <p>
       Environmental health is a subdiscipline of public health that focuses on the reciprocal relationships between human activity, environmental quality, and the health of people and ecosystems. Environmental health is highly interdisciplinary and draws upon numerous public health, natural science, and social science disciplines including epidemiology, exposure science, toxicology, risk assessment, chemistry, biology, geology, sociology, psychology, and more. Middlebury offers many opportunities to learn about and engage directly with the field of environmental health. Please <a href="https://www.middlebury.edu/college/people/kate-professor-crawford">contact me</a> if you are interested in collaborating or becoming part of an <a href="{{ '/research/' | relative_url}}">existing project</a>.
     </p>
