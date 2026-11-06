@@ -11,6 +11,6 @@ I am an environmental health scientist. As an [Assistant Professor of Environmen
 
 I love introducing undergraduate students to the field of environmental health (and public health more broadly) through my courses and research. I also take seriously the importance of scientists translating and communicating their findings for non-technical audiences, making an effort to engage in science communication in and out of my classroom as often as possible. 
 
-Before joining Middlebury College in 2020, I received my Bachelor’s and Master’s degrees in Environmental Science and Aquatic Ecology and Watershed Science, respectively, from the University of Vermont, and my PhD in Environmental health from the Boston University School of Public Health. I also completed a postdoctoral fellowship in the Department of Epidemiology at Dartmouth’s Geisel School of Medicine. My full CV is available here. 
+Before joining Middlebury College in 2020, I received my Bachelor’s and Master’s degrees in Environmental Science and Aquatic Ecology and Watershed Science, respectively, from the University of Vermont, and my PhD in Environmental health from the Boston University School of Public Health. I also completed a postdoctoral fellowship in the Department of Epidemiology at Dartmouth’s Geisel School of Medicine. My full CV is available [here]({{ site.baseurl }}/assets/CV_CRAWFORD.pdf). 
 
 If you are interested in collaborating or working in my lab, please contact me: kcrawford [at] middlebury [dot] edu. 

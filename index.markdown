@@ -15,38 +15,33 @@ title: "Environmental Health at Middlebury"
     <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
     <img src="{{ '/assets/img/eham.png' | relative_url}}">
     <p>
-      Environmental health is a subdiscipline of public health that focuses on the reciprocal relationships between human activity, environmental quality, and the health of people and ecosystems. Environmental health is highly interdisciplinary and draws upon numerous public health, natural science, and social science disciplines including epidemiology, exposure science, toxicology, risk assessment, chemistry, biology, geology, sociology, psychology, and more. Middlebury offers many opportunities to learn about and engage directly with the field of environmental health. 
+      Environmental health is a subdiscipline of public health that focuses on the reciprocal relationships between human activity, environmental quality, and the health of people and ecosystems. Environmental health is highly interdisciplinary and draws upon numerous public health, natural science, and social science disciplines including epidemiology, exposure science, toxicology, risk assessment, chemistry, biology, geology, sociology, psychology, and more. Middlebury offers many opportunities to learn about and engage directly with the field of environmental health. Please <a href="https://www.middlebury.edu/college/people/kate-professor-crawford">contact me</a> if you are interested in collaborating or becoming part of an <a href="{{ '/research/' | relative_url}}">existing project</a>.
     </p>
   </div>
   
   <div class="home-columns">
-  {% assign current = site.data.teaching | where: "current", true %}
-  {% if current.size > 0 %}
-  <section class="home-columns__col">
-    {% include course-list.html heading="Teaching this year" items=current %}
-    <p><a href="{{ '/teaching/' | relative_url }}">All teaching →</a></p>
-  </section>
-  {% endif %}
-
-  <section class="home-columns__col">
-    <h2>Current Research</h2>
-    <div class="project-grid">
-    {% for project in site.data.projects limit: 3 %}
-      <div class="project-card project-card--compact">
-        {% if project.images %}
-          <img class="project-card__thumb" src="{{ project.images.first | relative_url }}" alt="">
-        {% endif %}
-        <h4 class="project-card__title">
-          {% if project.link %}<a href="{{ project.link }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
-        </h4>
+    {% assign current = site.data.teaching | where: "current", true %}
+    {% if current.size > 0 %}
+    <section class="home-columns__col">
+      {% include course-list.html heading="Teaching this year" items=current %}
+      <p><a href="{{ '/teaching/' | relative_url }}">All teaching →</a></p>
+    </section>
+    {% endif %}
+    <section class="home-columns__col">
+      <h2>Current Research</h2>
+      <div class="project-grid">
+      {% for project in site.data.projects limit: 3 %}
+        <div class="project-card project-card--compact">
+          {% if project.images %}
+            <img class="project-card__thumb" src="{{ project.images.first | relative_url }}" alt="">
+          {% endif %}
+          <h4 class="project-card__title">
+            {% if project.link %}<a href="{{ project.link }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
+          </h4>
+        </div>
+      {% endfor %}
       </div>
-    {% endfor %}
-    </div>
-    <p><a href="{{ '/projects/' | relative_url }}">All research →</a></p>
-  </section>
-  <section class="home-columns__col">
-  <h2>Get involved</h2>
-</section>
+      <p><a href="{{ '/research/' | relative_url }}">All research →</a></p>
+    </section>
+  </div>
 </div>
-
-
